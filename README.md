@@ -10,6 +10,10 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="MIT license"></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/maximebriand/pestacle/releases/latest/download/Pestacle.zip"><b>⬇︎ Download the latest version</b></a> · macOS 14+ · Apple Silicon
+</p>
+
 <p align="center"><a href="README.fr.md">Lire en français</a></p>
 
 ---
@@ -44,7 +48,7 @@ Every shortcut can be changed or cleared in Settings.
 
 ## Install
 
-1. Download `Pestacle-x.y.z.zip` from the [latest release](https://github.com/maximebriand/pestacle/releases/latest). It is signed with a Developer ID and notarized by Apple.
+1. **[Download Pestacle.zip](https://github.com/maximebriand/pestacle/releases/latest/download/Pestacle.zip)** (always the latest version; all versions are on the [releases page](https://github.com/maximebriand/pestacle/releases)). It is signed with a Developer ID and notarized by Apple.
 2. Unzip it and move **Pestacle** to your Applications folder, then open it.
 3. Pestacle asks for **Accessibility** access, which it needs to move other apps' windows. Click *Open System Settings* and turn Pestacle on. It picks up the permission within seconds, no restart needed.
 

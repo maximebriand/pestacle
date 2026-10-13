@@ -59,4 +59,6 @@ release: generate
 	spctl -a -vv $(RELEASE)/Pestacle.app
 	rm $(RELEASE)/notarize.zip
 	ditto -c -k --keepParent $(RELEASE)/Pestacle.app $(RELEASE)/Pestacle-$(VERSION).zip
+	# Nom fixe : le README pointe vers releases/latest/download/Pestacle.zip.
+	cp $(RELEASE)/Pestacle-$(VERSION).zip $(RELEASE)/Pestacle.zip
 	shasum -a 256 $(RELEASE)/Pestacle-$(VERSION).zip

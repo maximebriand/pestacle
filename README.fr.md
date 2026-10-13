@@ -2,6 +2,10 @@
   <img src="design/banner.png" alt="Pestacle — gestionnaire de fenêtres au clavier pour macOS, natif Apple Silicon" width="860">
 </p>
 
+<p align="center">
+  <a href="https://github.com/maximebriand/pestacle/releases/latest/download/Pestacle.zip"><b>⬇︎ Télécharger la dernière version</b></a> · macOS 14+ · Apple Silicon
+</p>
+
 <p align="center"><a href="README.md">Read in English</a></p>
 
 ---
@@ -36,7 +40,7 @@ Chaque raccourci peut être modifié ou effacé dans les réglages.
 
 ## Installation
 
-1. Téléchargez `Pestacle-x.y.z.zip` depuis la [dernière version](https://github.com/maximebriand/pestacle/releases/latest). L'app est signée Developer ID et notarisée par Apple.
+1. **[Téléchargez Pestacle.zip](https://github.com/maximebriand/pestacle/releases/latest/download/Pestacle.zip)** (toujours la dernière version ; toutes les versions sont sur la [page des releases](https://github.com/maximebriand/pestacle/releases)). L'app est signée Developer ID et notarisée par Apple.
 2. Décompressez-la, placez **Pestacle** dans le dossier Applications, puis ouvrez-la.
 3. Pestacle demande l'accès **Accessibilité**, nécessaire pour déplacer les fenêtres des autres apps. Cliquez sur *Ouvrir Réglages Système* et activez Pestacle : l'app le détecte en quelques secondes, sans redémarrage.
 
