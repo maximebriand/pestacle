@@ -1,0 +1,4 @@
+#!/bin/sh
+# Affiche le bilan d'un .xcresult et la liste des tests en échec.
+set -e
+xcrun xcresulttool get test-results summary --path "$1" | python3 "$(dirname "$0")/test_summary.py"

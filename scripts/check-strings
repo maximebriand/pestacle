@@ -1,0 +1,4 @@
+#!/bin/sh
+# Vérifie le catalogue de chaînes : chaque clé utilisée dans le code est présente
+# et chaque clé a une traduction française. À lancer après `make build`.
+exec python3 "$(dirname "$0")/check_strings.py" "$@"

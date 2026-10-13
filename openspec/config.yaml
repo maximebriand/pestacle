@@ -1,0 +1,46 @@
+schema: spec-driven
+
+context: |
+  Language: fr
+  All artifacts must be written in fr.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+
+  Projet : Pestacle — gestionnaire de fenêtres au clavier pour macOS, réinterprétation
+  native Apple Silicon de Spectacle (github.com/eczarny/spectacle, archivé).
+  « Pestacle » est la façon dont les enfants français prononcent « spectacle ».
+
+  Stack :
+  - Swift 6 (strict concurrency), AppKit + SwiftUI pour les réglages.
+  - Cible : macOS 14 Sonoma minimum, arm64 uniquement (pas de binaire universel).
+  - Projet Xcode généré par XcodeGen (project.yml versionné, .xcodeproj ignoré).
+  - App barre de menus (LSUIElement), sans fenêtre principale ni icône de Dock.
+  - Déplacement des fenêtres via l'API Accessibility (AXUIElement) ; raccourcis
+    globaux via Carbon RegisterEventHotKey (pas de permission Input Monitoring).
+  - Signature Developer ID (équipe 6369QW3U52) pour que la permission
+    Accessibilité survive aux rebuilds ; distribution hors Mac App Store
+    (sandbox incompatible avec l'API Accessibility).
+  - Aucune dépendance tierce sauf justification explicite dans design.md.
+  - Tests : XCTest/Swift Testing ; la géométrie (calcul des cadres) est pure et
+    testée unitairement, isolée du code AX.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

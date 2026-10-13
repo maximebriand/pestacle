@@ -1,0 +1,82 @@
+name: Pestacle
+options:
+  bundleIdPrefix: fr.maximebriand
+  deploymentTarget:
+    macOS: "14.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    ARCHS: arm64
+    ONLY_ACTIVE_ARCH: NO
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    DEVELOPMENT_TEAM: 6369QW3U52
+    CODE_SIGN_STYLE: Manual
+    CODE_SIGN_IDENTITY: "Developer ID Application"
+    ENABLE_HARDENED_RUNTIME: YES
+    MARKETING_VERSION: "0.1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    LOCALIZATION_PREFERS_STRING_CATALOGS: YES
+    SWIFT_EMIT_LOC_STRINGS: YES
+targets:
+  PestacleCore:
+    type: framework
+    platform: macOS
+    sources: [Sources/PestacleCore]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.maximebriand.PestacleCore
+        GENERATE_INFOPLIST_FILE: YES
+        SKIP_INSTALL: YES
+  Pestacle:
+    type: application
+    platform: macOS
+    sources: [Sources/Pestacle]
+    dependencies:
+      - target: PestacleCore
+      - sdk: Carbon.framework
+      - sdk: ServiceManagement.framework
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.maximebriand.Pestacle
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_LSUIElement: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Pestacle
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Maxime Briand"
+        ENABLE_APP_SANDBOX: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+  PestacleCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Tests/PestacleCoreTests]
+    dependencies:
+      - target: PestacleCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.maximebriand.PestacleCoreTests
+        GENERATE_INFOPLIST_FILE: YES
+  PestacleTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources: [Tests/PestacleTests]
+    dependencies:
+      - target: Pestacle
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: fr.maximebriand.PestacleTests
+        GENERATE_INFOPLIST_FILE: YES
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Pestacle.app/Contents/MacOS/Pestacle"
+        BUNDLE_LOADER: "$(TEST_HOST)"
+schemes:
+  Pestacle:
+    build:
+      targets:
+        Pestacle: all
+        PestacleCoreTests: [test]
+        PestacleTests: [test]
+    test:
+      targets: [PestacleCoreTests, PestacleTests]
+      gatherCoverageData: true
