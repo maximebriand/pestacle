@@ -47,7 +47,7 @@
 ## 6. Intégration et livraison
 
 - [x] 6.1 Dérouler la recette de toutes les specs sur deux écrans, en AZERTY et en US, avec Chrome, VS Code, Slack, Terminal, Calculette, une feuille, Dock et barre des menus masqués automatiquement, VoiceOver actif ; consigner le résultat dans `docs/recette.md`, y compris les points D2 et D9 non vérifiés en amont
-- [ ] 6.2 Ajouter `make release` (archive, signature, notarisation, agrafage) ; vérifier avec `spctl -a -vv Pestacle.app` que Gatekeeper accepte l'app
+- [x] 6.2 Ajouter `make release` (archive, signature, notarisation, agrafage) ; vérifier avec `spctl -a -vv Pestacle.app` que Gatekeeper accepte l'app
 
 ## Workflow follow-up
 
