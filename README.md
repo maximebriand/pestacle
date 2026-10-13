@@ -72,7 +72,7 @@ Pestacle aims for muscle-memory compatibility, with a few deliberate changes:
 | Shortcut taken by another app | cleared | kept, marked inactive, retried when that app quits |
 | Size cycling | always on | can be turned off |
 
-Not in this first version: disabling shortcuts per app or for an hour. Drag-to-edge snapping is [specified](openspec/changes/add-drag-snapping) and coming next.
+Pestacle is keyboard-only by design: to tile windows by dragging them to screen edges, use the tiling built into macOS 15 and later, which Pestacle doesn't interfere with. Not in this first version: disabling shortcuts per app or for an hour.
 
 ## Build from source
 

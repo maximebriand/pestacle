@@ -64,7 +64,7 @@ Pestacle vise la compatibilité avec vos réflexes, avec quelques changements as
 | Raccourci pris par une autre app | effacé | conservé, signalé inactif, réessayé quand l'app quitte |
 | Cycle de tailles | toujours actif | désactivable |
 
-Pas dans cette première version : désactiver les raccourcis pour une app ou pendant une heure. Le placement par glisser vers les bords est [spécifié](openspec/changes/add-drag-snapping) et arrive ensuite.
+Pestacle se pilote au clavier, par choix : pour placer les fenêtres en les glissant vers les bords de l'écran, utilisez la mosaïque intégrée à macOS 15 et plus récent, avec laquelle Pestacle n'interfère pas. Pas dans cette première version : désactiver les raccourcis pour une app ou pendant une heure.
 
 ## Compiler
 

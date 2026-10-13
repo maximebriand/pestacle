@@ -17,7 +17,7 @@ Spectacle, le gestionnaire de fenêtres au clavier de référence sur macOS, est
 - Parcours d'autorisation Accessibilité avec reprise automatique.
 
 Hors périmètre de ce changement :
-- Placement par glisser-déposer vers les bords : changement séparé `add-drag-snapping`, également prévu en v1.
+- Placement par glisser-déposer vers les bords : essayé puis écarté le 13 octobre 2026, car il se mélangeait avec la mosaïque native de macOS 15+, qui couvre déjà ce geste.
 - Désactivation des raccourcis par application ou pour une durée, liste d'exclusion (présents dans Spectacle, reportés).
 - Dispositions personnalisées, Spaces et plein écran natif, Stage Manager (comportement non garanti quand il est actif), mise à jour automatique, Mac App Store.
 
