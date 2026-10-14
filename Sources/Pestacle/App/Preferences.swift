@@ -16,6 +16,7 @@ final class Preferences {
         static let cyclesSizes = "cyclesSizes"
         static let showsMenuBarIcon = "showsMenuBarIcon"
         static let didCompleteFirstLaunch = "didCompleteFirstLaunch"
+        static let shortcutsSchema = "shortcutsSchema"
     }
 
     init(store: UserDefaults = .standard) {
@@ -59,6 +60,22 @@ final class Preferences {
         return Dictionary(uniqueKeysWithValues: WindowAction.allCases.map { action in
             (action, stored[action] ?? defaults[action])
         })
+    }
+
+    /// Version du schéma des raccourcis enregistrés. 2 : agrandir / réduire sur ⌃⌥⇧⌘ + flèches.
+    static let currentShortcutsSchema = 2
+
+    /// Met à jour, une seule fois, les raccourcis enregistrés par une version antérieure : un
+    /// raccourci resté à un ancien défaut remplacé reçoit le nouveau ; un raccourci personnalisé
+    /// est conservé.
+    func migrateShortcuts(defaults: [WindowAction: Shortcut]) {
+        guard store.integer(forKey: Key.shortcutsSchema) < Self.currentShortcutsSchema else { return }
+        var stored = storedShortcuts
+        for (action, old) in DefaultShortcuts.replacedDefaults where stored[action] == .some(old) {
+            stored[action] = .some(defaults[action])
+        }
+        storedShortcuts = stored
+        store.set(Self.currentShortcutsSchema, forKey: Key.shortcutsSchema)
     }
 
     func setShortcut(_ shortcut: Shortcut?, for action: WindowAction) {

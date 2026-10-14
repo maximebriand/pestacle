@@ -47,4 +47,22 @@ struct DefaultShortcutsTests {
         #expect(kept[.center] == customCenter)
         #expect(kept[.nextThird] == .some(nil))
     }
+
+    @Test("Agrandir et réduire passent sur ⌃⌥⇧⌘ + flèches, les autres défauts sont inchangés")
+    func newDefaults() {
+        let d = DefaultShortcuts.resolved { _ in nil }
+        #expect(d[.makeLarger] == Shortcut(keyCode: KeyCode.rightArrow, modifiers: [.control, .option, .shift, .command]))
+        #expect(d[.makeSmaller] == Shortcut(keyCode: KeyCode.leftArrow, modifiers: [.control, .option, .shift, .command]))
+        #expect(d[.nextThird] == Shortcut(keyCode: KeyCode.rightArrow, modifiers: [.control, .option]))
+    }
+
+    @Test("L'import Spectacle reconnaît toujours ses propres défauts d'agrandir / réduire")
+    func spectacleBuiltInUnchanged() {
+        let imported: [WindowAction: Shortcut?] = [
+            .makeLarger: Shortcut(keyCode: KeyCode.rightArrow, modifiers: [.control, .option, .shift]),
+            .makeSmaller: Shortcut(keyCode: KeyCode.leftArrow, modifiers: [.control, .option, .shift]),
+        ]
+        #expect(DefaultShortcuts.customizations(in: imported).isEmpty)
+    }
 }
+

@@ -41,3 +41,9 @@ Autres vérifications automatiques :
 - [ ] **Deux écrans** (si un écran externe est disponible, non vérifié) : écran suivant / précédent, fenêtre centrée à taille constante ; branchement et débranchement à chaud.
 
 Non vérifiable sur cette machine : macOS 14 (prise en compte à chaud de l'autorisation), VoiceOver actif avec Chrome, redémarrage de session.
+
+## 3. Correction des raccourcis (14 octobre 2026, clavier réel, AZERTY)
+
+- ⌃⌥⇧ + flèches (ancien défaut d'« Agrandir » / « Réduire ») est intercepté par macOS 27 : n'atteint jamais Pestacle (deux essais).
+- ⌃⌥⇧⌘→ / ⌃⌥⇧⌘← : agrandir et réduire fonctionnent, après migration automatique du raccourci resté à l'ancien défaut.
+- ⌃⇧ + flèches parvient aux apps alors que macOS le déclare réservé : le contrôle des réglages ne le refuse plus.

@@ -10,7 +10,7 @@ Au premier lancement et à la réinitialisation, le système SHALL aussi attribu
 - **THEN** le déplacement est annulé
 
 #### Scenario: Agrandir par défaut
-- **WHEN** l'utilisateur presse ⌃⌥⇧⌘→ sur un vrai clavier, avec une fenêtre libre active
+- **WHEN** l'utilisateur presse ⌃⌥⇧⌘→ sur un vrai clavier, une fenêtre active
 - **THEN** la fenêtre est agrandie
 
 ### Requirement: Conflits avec Pestacle et le système
@@ -30,19 +30,8 @@ Le système SHALL refuser un raccourci déjà attribué à une autre action de P
 
 ## ADDED Requirements
 
-### Requirement: Raccourcis par défaut de la mosaïque
-Au premier lancement d'une version avec mosaïque et à la réinitialisation, le système SHALL attribuer : ⌃⇧← / ⌃⇧→ / ⌃⇧↑ / ⌃⇧↓ focus à gauche / à droite / en haut / en bas, ⌥⇧⌘← / ⌥⇧⌘→ / ⌥⇧⌘↑ / ⌥⇧⌘↓ échanger à gauche / à droite / en haut / en bas, ⌃⇧↩ isoler. « Désarrimer la fenêtre » et « Libérer toutes les fenêtres de cet écran » SHALL n'avoir aucun raccourci par défaut.
-
-#### Scenario: Focus par défaut
-- **WHEN** deux fenêtres sont arrimées côte à côte, celle de gauche active, et l'utilisateur presse ⌃⇧→
-- **THEN** la fenêtre de droite devient active
-
-#### Scenario: Raccourcis Spectacle inchangés
-- **WHEN** l'utilisateur presse ⌃⌥→ avec une fenêtre libre active
-- **THEN** la fenêtre est placée sur le tiers suivant, comme avant
-
 ### Requirement: Migration d'Agrandir et Réduire
-Au premier lancement d'une version avec ces nouveaux défauts, un raccourci « Agrandir » encore égal à ⌃⌥⇧→, ou « Réduire » encore égal à ⌃⌥⇧←, SHALL être remplacé par sa nouvelle valeur par défaut ; un raccourci personnalisé SHALL être conservé. Les raccourcis de la mosaïque absents SHALL recevoir leurs valeurs par défaut.
+Au premier lancement d'une version avec ces nouveaux défauts, un raccourci « Agrandir » encore égal à ⌃⌥⇧→, ou « Réduire » encore égal à ⌃⌥⇧←, SHALL être remplacé par sa nouvelle valeur par défaut ; un raccourci personnalisé SHALL être conservé ; la migration SHALL n'être jouée qu'une fois.
 
 #### Scenario: Ancienne valeur par défaut
 - **WHEN** un utilisateur de la v0.1.0 n'a jamais modifié « Agrandir » et installe la nouvelle version
@@ -51,3 +40,7 @@ Au premier lancement d'une version avec ces nouveaux défauts, un raccourci « A
 #### Scenario: Valeur personnalisée
 - **WHEN** l'utilisateur avait attribué ⌃⌥⌘= à « Agrandir »
 - **THEN** « Agrandir » reste sur ⌃⌥⌘=
+
+#### Scenario: Retour volontaire à l'ancienne valeur
+- **WHEN** après la migration, l'utilisateur réattribue lui-même ⌃⌥⇧→ à « Agrandir » et relance l'app
+- **THEN** « Agrandir » reste sur ⌃⌥⇧→

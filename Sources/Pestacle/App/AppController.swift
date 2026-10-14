@@ -46,6 +46,7 @@ final class AppController: ActionFeedback {
 
     func start() {
         let imported = completeFirstLaunchIfNeeded()
+        preferences.migrateShortcuts(defaults: defaultShortcuts)
 
         hotKeys.onTrigger = { [unowned self] in coordinator.perform($0) }
         hotKeys.onStatusChange = { [unowned self] in refreshSettings() }
