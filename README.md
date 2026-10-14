@@ -41,7 +41,7 @@
 | Left / right half | ⌥⌘← / ⌥⌘→ | | Fullscreen | ⌥⌘F |
 | Top / bottom half | ⌥⌘↑ / ⌥⌘↓ | | Center | ⌥⌘C |
 | Upper left / right quarter | ⌃⌘← / ⌃⌘→ | | Next / previous third | ⌃⌥→ / ⌃⌥← |
-| Lower left / right quarter | ⌃⇧⌘← / ⌃⇧⌘→ | | Make larger / smaller | ⌃⌥⇧→ / ⌃⌥⇧← |
+| Lower left / right quarter | ⌃⇧⌘← / ⌃⇧⌘→ | | Make larger / smaller | ⌃⌥⇧⌘→ / ⌃⌥⇧⌘← |
 | Next / previous display | ⌃⌥⌘→ / ⌃⌥⌘← | | Undo / redo last move | ⌥⌘Z / ⌥⇧⌘Z |
 
 Every shortcut can be changed or cleared in Settings.

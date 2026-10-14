@@ -33,7 +33,7 @@
 | Moitié gauche / droite | ⌥⌘← / ⌥⌘→ | | Plein écran | ⌥⌘F |
 | Moitié haute / basse | ⌥⌘↑ / ⌥⌘↓ | | Centrer | ⌥⌘C |
 | Quart haut gauche / droit | ⌃⌘← / ⌃⌘→ | | Tiers suivant / précédent | ⌃⌥→ / ⌃⌥← |
-| Quart bas gauche / droit | ⌃⇧⌘← / ⌃⇧⌘→ | | Agrandir / réduire | ⌃⌥⇧→ / ⌃⌥⇧← |
+| Quart bas gauche / droit | ⌃⇧⌘← / ⌃⇧⌘→ | | Agrandir / réduire | ⌃⌥⇧⌘→ / ⌃⌥⇧⌘← |
 | Écran suivant / précédent | ⌃⌥⌘→ / ⌃⌥⌘← | | Annuler / rétablir | ⌥⌘Z / ⌥⇧⌘Z |
 
 Chaque raccourci peut être modifié ou effacé dans les réglages.

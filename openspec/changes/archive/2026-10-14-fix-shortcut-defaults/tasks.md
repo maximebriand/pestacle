@@ -12,7 +12,7 @@
 ## 3. Livraison
 
 - [x] 3.1 Vérifier au vrai clavier qu'Agrandir et Réduire fonctionnent après migration, consigner dans `docs/recette.md`
-- [ ] 3.2 Version 0.1.1 : notes de version, `make release`, publication GitHub après accord de l'utilisateur ; vérifier le téléchargement avec Gatekeeper
+- [x] 3.2 Version 0.1.1 : notes de version, `make release`, publication GitHub après accord de l'utilisateur ; vérifier le téléchargement avec Gatekeeper
 
 ## Workflow follow-up
 
